@@ -1,0 +1,11 @@
+### server port
+server:
+  port: 8080
+
+  #Keycloak Configuration
+keycloak:
+  auth-server-url: http://keycloak-omarprj.192.168.99.100.nip.io/auth
+  realm: keycloak-springboot-realm
+  resource: keycloak-springboot-client-id
+  public-client: true
+

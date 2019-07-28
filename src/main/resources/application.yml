@@ -9,3 +9,6 @@ keycloak:
   resource: keycloak-springboot-client-id
   public-client: true
 
+spring:
+  thymeleaf:
+    cache: false

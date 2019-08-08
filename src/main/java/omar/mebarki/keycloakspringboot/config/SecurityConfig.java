@@ -49,10 +49,10 @@ class SecurityConfig extends KeycloakWebSecurityConfigurerAdapter {
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         super.configure(http);
+
         http.authorizeRequests()
-                .antMatchers("/secret*")
-                .hasRole("USER_ROLE")
-                .anyRequest()
-                .permitAll();
+                .mvcMatchers("/secret/**")
+                .authenticated();
+
     }
 }

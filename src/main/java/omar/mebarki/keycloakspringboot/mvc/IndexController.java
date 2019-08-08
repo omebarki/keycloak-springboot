@@ -6,6 +6,7 @@ import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 
 import java.security.Principal;
 
@@ -17,11 +18,10 @@ public class IndexController {
         return "indexInternal";
     }
 
-    @GetMapping(path = "/secret")
+    @RequestMapping(path = "/secret/a")
     public String secret(Principal principal, Model model) {
-        KeycloakSecurityContext token = (KeycloakSecurityContext) ((Authentication) principal).getCredentials();
 
-        model.addAttribute("username", token.getIdToken());
+        model.addAttribute("username", principal);
         return "secret";
     }
 }
